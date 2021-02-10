@@ -1,0 +1,12 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+   color: $heading-color;
+   font: normal 125% / 1.4 $text-font-stack;
+}
+span,
+a,
+p {
+   letter-spacing: normal !important;
+}

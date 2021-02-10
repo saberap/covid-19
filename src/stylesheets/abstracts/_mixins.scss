@@ -1,0 +1,57 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Saber Alipour
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Saber Alipour
+@mixin on-event($self: false) {
+    @if $self {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    } @else {
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Saber Alipour
+/// @param {String} $context
+@mixin when-inside($context) {
+    #{$context} & {
+        @content;
+    }
+}
+
+/// Make Write media queries easy
+@mixin media($breakpoint) {
+    @if $breakpoint==small-tablet {
+        @media only screen and (max-width: map-get($map: $mediaBreackpoint, $key: 'small-tablet')) {
+            @content;
+        }
+    }
+    @if $breakpoint==tablet {
+        @media only screen and (max-width: map-get($map: $mediaBreackpoint, $key: 'tablet')) {
+            @content;
+        }
+    }
+    @if $breakpoint==small-mobile {
+        @media only screen and (max-width: map-get($map: $mediaBreackpoint, $key: 'small-mobile')) {
+            @content;
+        }
+    }
+    @if $breakpoint==mobile {
+        @media only screen and (max-width: map-get($map: $mediaBreackpoint, $key: 'mobile')) {
+            @content;
+        }
+    }
+}

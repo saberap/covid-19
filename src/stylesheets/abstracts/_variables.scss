@@ -1,0 +1,99 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'dana', 'tahoma', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+   'Monaco', monospace !default;
+
+/// Heading color
+/// @type Color
+$heading-color: #035755 !default;
+
+///Body color
+/// @type Color
+$body-color: #fff !default;
+
+///Body Dark color
+/// @type Color
+$body-linear-from-top: linear-gradient(0deg, rgba(255, 255, 255, 0) -29.64%, #FFF8F8 45.66%, #B57474 45.66%) !default;
+
+///Body Dark color
+/// @type Color
+$body-linear-from-buttom: linear-gradient(360deg, rgba(255, 241, 241, 0.5) 0%, rgba(255, 241, 241, 0) 108.69%) !default;
+
+///Border color
+/// @type Color
+$border-color: #e8e9eb !default;
+
+///White color
+/// @type Color
+$white-color: #ffffff !default;
+
+///Primary color
+/// @type Color
+$primary-color: #FB4C47 !default;
+$primary-color-light: #FFD0D0 !default;
+
+///Primary color
+/// @type Color
+$secondary-color: #167C51 !default;
+$secondary-color-light: #128E5A !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+//Heading Size
+///@type Size
+$h1-size: 3.5rem;
+$h2-size: 3rem;
+$h3-size: 2.25rem;
+$h4-size: 1.75rem;
+$h5-size: 1.25rem;
+$h6-size: 1.125rem;
+
+//Typography Size
+///@type Size
+$regular-size: 0.875rem;
+$small-size: 0.625rem;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+   'small': 320px,
+   'medium': 768px,
+   'large': 1024px,
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///$base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
+
+///Border-radius of elements are here
+/// @type Size
+$card-border-radius: 15px;
+$button-border-radius: 10px;
+$input-border-radius: 15px;
+$table-border-radius: 15px;
+
+///Media Screen Size
+///@type Size
+$mediaBreackpoint: (
+   'small-mobile': 320px,
+   'mobile': 480px,
+   'small-tablet': 600px,
+   'tablet': 1024px,
+) !default;
+
+///Shadows
+///@type Shadow
+$shadow-bg: -4px 8px 24px rgba(44, 63, 88, 0.02);
