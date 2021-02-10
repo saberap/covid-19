@@ -8,8 +8,7 @@ $text-font-stack: 'dana', 'tahoma', 'Arial', sans-serif !default;
 
 /// Code (monospace) font family
 /// @type List
-$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
-   'Monaco', monospace !default;
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
 /// Heading color
 /// @type Color
@@ -19,9 +18,13 @@ $heading-color: #035755 !default;
 /// @type Color
 $body-color: #fff !default;
 
+//Layout primary color
+/// @type Color
+$layout-primary-color: #fff8f8 !default;
+
 ///Body Dark color
 /// @type Color
-$body-linear-from-top: linear-gradient(0deg, rgba(255, 255, 255, 0) -29.64%, #FFF8F8 45.66%, #B57474 45.66%) !default;
+$body-linear-from-top: linear-gradient(0deg, rgba(255, 255, 255, 0) -29.64%, #fff8f8 45.66%, #b57474 45.66%) !default;
 
 ///Body Dark color
 /// @type Color
@@ -37,13 +40,13 @@ $white-color: #ffffff !default;
 
 ///Primary color
 /// @type Color
-$primary-color: #FB4C47 !default;
-$primary-color-light: #FFD0D0 !default;
+$primary-color: #fb4c47 !default;
+$primary-color-light: #ffd0d0 !default;
 
 ///Primary color
 /// @type Color
-$secondary-color: #167C51 !default;
-$secondary-color-light: #128E5A !default;
+$secondary-color: #167c51 !default;
+$secondary-color-light: #128e5a !default;
 
 /// Container's maximum width
 /// @type Length
@@ -67,9 +70,9 @@ $small-size: 0.625rem;
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-   'small': 320px,
-   'medium': 768px,
-   'large': 1024px,
+    'small': 320px,
+    'medium': 768px,
+    'large': 1024px,
 ) !default;
 
 /// Relative or absolute URL where all assets are served from
@@ -88,10 +91,10 @@ $table-border-radius: 15px;
 ///Media Screen Size
 ///@type Size
 $mediaBreackpoint: (
-   'small-mobile': 320px,
-   'mobile': 480px,
-   'small-tablet': 600px,
-   'tablet': 1024px,
+    'small-mobile': 320px,
+    'mobile': 480px,
+    'small-tablet': 600px,
+    'tablet': 1024px,
 ) !default;
 
 ///Shadows

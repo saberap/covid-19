@@ -12,6 +12,10 @@
     @return url($base + $type + $path);
 }
 
+@function static($path, $base: '../../../public/static/') {
+    @return url($base + $path);
+}
+
 /// Returns URL to an image based on its path
 /// @param {String} $path - image path
 /// @param {String} $base [$base-url] - base URL
