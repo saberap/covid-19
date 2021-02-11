@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Layout, Overview } from 'components';
+import { Layout, Overview, About, Contagion, Symptomp } from 'components';
 
 export default function Home() {
     return (
@@ -10,6 +10,9 @@ export default function Home() {
             </Head>
             <Layout>
                 <Overview />
+                <About />
+                <Contagion />
+                <Symptomp />
             </Layout>
         </>
     );

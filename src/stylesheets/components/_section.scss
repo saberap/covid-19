@@ -1,7 +1,10 @@
-.overview {
-    background-image: $body-linear-from-top;
+.section {
     width: 100%;
     height: auto;
+    background-color: #fff;
+    &__linear-gradient {
+        background-image: $body-linear-from-top;
+    }
     &__wrapper {
         display: flex;
         justify-content: space-between;
