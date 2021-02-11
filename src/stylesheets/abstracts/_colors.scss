@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass colors.
+// -----------------------------------------------------------------------------
+.heading-color {
+    color: $heading-color;
+}
+
+.primary-color {
+    color: $primary-color;
+}
+.primary-color-light {
+    color: $primary-color-light;
+}
+.secondary-color {
+    color: $secondary-color;
+}
+.secondary-color-light {
+    color: $secondary-color-light;
+}
+
+.primary-background-color {
+    background-color: $primary-color;
+}
+.primary-background-color-light {
+    background-color: $primary-color-light;
+}
+.secondary-background-color {
+    background-color: $secondary-color;
+}
+.secondary-background-color-light {
+    background-color: $secondary-color-light;
+}

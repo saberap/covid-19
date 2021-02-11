@@ -36,13 +36,9 @@
                             width: 5px;
                             height: 5px;
                             right: 50%;
-                            top: 25px;
+                            top: 20px;
                         }
-                        &:hover {
-                            &::after {
-                                opacity: 0;
-                            }
-                        }
+                       
                     }
                 }
                 & > a {
