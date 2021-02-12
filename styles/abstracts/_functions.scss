@@ -12,7 +12,7 @@
     @return url($base + $type + $path);
 }
 
-@function static($path, $base: '../../../public/static/') {
+@function static($path, $base: '../../public/static/') {
     @return url($base + $path);
 }
 

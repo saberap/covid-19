@@ -1,4 +1,4 @@
-import INav from 'interfaces/INav.interface';
+import { INav } from 'lib/interfaces';
 import Image from 'next/image';
 
 interface Props {

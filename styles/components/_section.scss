@@ -5,6 +5,9 @@
     &__linear-gradient {
         background-image: $body-linear-from-top;
     }
+    &__linear-gradient-from-bottom {
+        background-image: $body-linear-from-buttom;
+    }
     &__wrapper {
         display: flex;
         justify-content: space-between;

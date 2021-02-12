@@ -1,6 +1,6 @@
 import Navbar from './Navbar';
 
-import navItems from 'constants/nav-items';
+import { navItems } from 'lib/constants';
 
 export default function Layout({ children }: any) {
     return (
