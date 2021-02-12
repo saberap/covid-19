@@ -1,3 +1,5 @@
-export default function Footer() {
-    return <div></div>;
+import { ReactElement } from 'react';
+
+export default function Footer(): ReactElement {
+   return <div></div>;
 }

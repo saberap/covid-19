@@ -1,5 +1,5 @@
 export default interface INav {
-    name: string;
-    title: string;
-    url?: string;
+   name: string;
+   title: string;
+   url?: string;
 }

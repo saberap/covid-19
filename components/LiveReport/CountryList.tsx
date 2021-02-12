@@ -1,15 +1,5 @@
-import { ReactElement } from 'react'
+import { ReactElement } from 'react';
 
-
-
-interface Props {
-    data
-}
-
-export default function CountryList({}: Props): ReactElement {
-    return (
-        <div>
-            
-        </div>
-    )
+export default function CountryList(): ReactElement {
+   return <div></div>;
 }
