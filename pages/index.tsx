@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { ReactElement } from 'react';
 import Head from 'next/head';
+import axios from 'axios';
 
 import {
    Layout,
@@ -10,8 +13,10 @@ import {
    Prevention,
    LiveReport,
 } from 'components';
+import { api } from 'lib/configs';
+import { ISummary } from 'lib/interfaces';
 
-export default function Home(): ReactElement {
+export default function Home({ data }: any): ReactElement {
    return (
       <>
          <Head>
@@ -24,8 +29,44 @@ export default function Home(): ReactElement {
             <Contagion />
             <Symptomp />
             <Prevention />
-            <LiveReport />
+            <LiveReport data={data} />
          </Layout>
       </>
    );
+}
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+export async function getStaticProps() {
+   let data: Array<ISummary> = [];
+   try {
+      const res = await axios.get(`${api.base_url}/summary`);
+      data = await res.data.Countries;
+      console.log(data);
+      data = await data.map(
+         (item: any): ISummary => ({
+            name: item.Country,
+            code: item.CountryCode,
+            newConfirmed: item.NewConfirmed,
+            newDeaths: item.NewDeaths,
+            newRecovered: item.NewRecovered,
+            slug: item.Slug,
+            totalConfirmed: item.TotalConfirmed,
+            totalDeaths: item.TotalDeaths,
+            totalRecovered: item.TotalRecovered,
+         })
+      );
+   } catch (error) {
+      console.log(error);
+   }
+   if (!data) {
+      return {
+         notFound: true,
+      };
+   }
+   return {
+      props: {
+         data,
+      },
+   };
 }
