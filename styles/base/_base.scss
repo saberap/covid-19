@@ -19,6 +19,7 @@ html {
 *::before,
 *::after {
    box-sizing: inherit;
+   outline: none;
 }
 
 /**
@@ -32,4 +33,8 @@ a {
       color: $heading-color;
       text-decoration: underline;
    }
+}
+button,
+button:focus {
+   outline: none!important;
 }

@@ -9,58 +9,78 @@ interface Props {
    items: Array<ISummary>;
 }
 export default function CountryList({ items }: Props): ReactElement {
-   const [pagination, setPagination] = useState({ top: 10, skip: 0 });
-   const [data, setData] = useState(() => makePagination(items, 10, 0));
+   const [pagination, setPagination] = useState({ top: 8, skip: 0 });
+   const [data, setData] = useState(() => makePagination(items, 8, 0));
 
    const paginationHandler: (type: 'next' | 'previous') => void = type => {
       switch (type) {
          case 'next':
             setData(
-               makePagination(items, pagination.top, pagination.skip + 10)
+               makePagination(
+                  items,
+                  pagination.top,
+                  pagination.skip + pagination.top
+               )
             );
             setPagination({
                top: pagination.top,
-               skip: pagination.skip + 10,
+               skip: pagination.skip + pagination.top,
             });
             break;
          case 'previous':
             setData(
-               makePagination(items, pagination.top, pagination.skip - 10)
+               makePagination(
+                  items,
+                  pagination.top,
+                  pagination.skip - pagination.top
+               )
             );
             setPagination({
                top: pagination.top,
-               skip: pagination.skip - 10,
+               skip: pagination.skip - pagination.top,
             });
             break;
       }
    };
    return (
       <div className='country'>
-         <div className='country__head flex justify-between'>
+         <div className='country__head flex justify-between py-5'>
             <h2 className='text-xl font-bold mx-2'>Live Reports</h2>
             <div className='bg-white shadow-lg rounded-lg flex justify-between p-2'>
                <button
-                  className='hover:text-red-500'
-                  onClick={() => paginationHandler('next')}
+                  onClick={() => paginationHandler('previous')}
+                  disabled={pagination.skip === 0}
                >
-                  <ChevronLeft />
+                  <ChevronLeft
+                     color={`${pagination.skip === 0 ? 'gray' : 'black'}`}
+                  />
                </button>
                <span className='-mt-1'>|</span>
                <button
-                  className='hover:text-red-500'
                   onClick={() => paginationHandler('next')}
+                  disabled={items.length - pagination.skip <= pagination.top}
                >
-                  <ChevronRight />
+                  <ChevronRight
+                     color={`${
+                        items.length - pagination.skip <= pagination.top
+                           ? 'gray'
+                           : 'black'
+                     }`}
+                  />
                </button>
             </div>
          </div>
          <div className='country__body'>
             <ul>
                {data.map((item: ISummary) => (
-                  <li key={item.slug} className='flex justify-between'>
-                     <Flag className='w-1/12' code={item.code} />
-                     <h3 className='w-9/12'> {item.name} </h3>
-                     <span>{numeral(item.totalConfirmed).format('0,0')}</span>
+                  <li key={item.slug} className='flex justify-between my-5'>
+                     <Flag className='w-1/12 rounded-md' code={item.code} />
+                     <h3 className='w-9/12 text-left font-semibold ml-5'>
+                        {item.name}
+                     </h3>
+                     <span className='font-semibold'>
+                        {numeral(item.totalConfirmed).format('0,0')}
+                     </span>
                   </li>
                ))}
             </ul>

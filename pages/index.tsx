@@ -15,6 +15,7 @@ import {
 } from 'components';
 import { api } from 'lib/configs';
 import { ISummary } from 'lib/interfaces';
+import { dynamicObjectSort } from 'lib/utilities';
 
 export default function Home({ data }: any): ReactElement {
    return (
@@ -42,7 +43,7 @@ export async function getStaticProps() {
    try {
       const res = await axios.get(`${api.base_url}/summary`);
       data = await res.data.Countries;
-      console.log(data);
+
       data = await data.map(
          (item: any): ISummary => ({
             name: item.Country,
@@ -56,6 +57,7 @@ export async function getStaticProps() {
             totalRecovered: item.TotalRecovered,
          })
       );
+      data = data.sort(dynamicObjectSort('totalConfirmed', 'desc'));
    } catch (error) {
       console.log(error);
    }
