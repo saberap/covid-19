@@ -54,7 +54,7 @@ export default function Prevention(): ReactElement {
             <div className='md:flex md:px-32 md:relative'>
                <div className='hidden md:w-1/3 md:block'>
                   <Image
-                     src='/static/assets/images/Wash-hands.svg'
+                     src='/static/assets/images/Wash-Hands.svg'
                      alt='Wash Hands'
                      width={350}
                      height={450}
