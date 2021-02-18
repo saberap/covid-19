@@ -4,6 +4,7 @@ import { Link } from 'react-scroll';
 
 import { INav } from 'lib/interfaces';
 
+import Swiper from './Swiper';
 interface Props {
    navbarItems: Array<INav>;
 }
@@ -39,6 +40,7 @@ export default function Navbar({ navbarItems }: Props): ReactElement {
                         </li>
                      ))}
                   </ul>
+                  <Swiper />
                </div>
             </div>
          </div>

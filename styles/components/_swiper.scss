@@ -1,0 +1,28 @@
+.swiper {
+    display: none;
+   @include media(mobile) {
+       display: block;
+      position: relative;
+      height: 50px;
+      width: 90%;
+      &__icon {
+         position: absolute;
+         right: 0;
+         animation: swipeHand 2s infinite;
+      }
+      &__line {
+         margin-top: 10px;
+         width: 100%;
+         height: 5px;
+         background-color: rgba($secondary-color-light, 0.1);
+      }
+   }
+}
+@keyframes swipeHand {
+   from {
+      right: 0;
+   }
+   to {
+      right: 85%;
+   }
+}
