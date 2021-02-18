@@ -1,9 +1,10 @@
 import { ReactElement } from 'react';
 import Image from 'next/image';
+import { navItemsMap } from 'lib/constants/nav-items.constant';
 
 export default function Contagion(): ReactElement {
    return (
-      <div className='section'>
+      <div className='section' id={navItemsMap.get('CONTAGION')?.url}>
          <div className='container'>
             <h3 className='primary-color font-bold text-center'>Covid-19</h3>
             <h2 className='heading-color font-bold text-4xl mb-5 text-center'>

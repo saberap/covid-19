@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import Image from 'next/image';
+import { Link } from 'react-scroll';
 
 import { INav } from 'lib/interfaces';
 
@@ -8,10 +9,10 @@ interface Props {
 }
 export default function Navbar({ navbarItems }: Props): ReactElement {
    return (
-      <div className='navbar'>
+      <div className='navbar pt-5'>
          <div className='container'>
-            <div className='navbar__wrapper'>
-               <div className='navbar__logo'>
+            <div className='flex justify-between'>
+               <div>
                   <Image
                      src={'/static/assets/images/Logo.svg'}
                      alt='Logo'
@@ -19,14 +20,22 @@ export default function Navbar({ navbarItems }: Props): ReactElement {
                      height={50}
                   />
                </div>
-               <div className='navbar__menu'>
-                  <ul>
+               <div>
+                  <ul className='md:flex overflow-auto whitespace-nowrap'>
                      {navbarItems.map((item: INav) => (
                         <li
                            key={item.name}
-                           className={item.name === 'OVERVIEW' ? 'active' : ''}
+                           className={`mx-2 cursor-pointer no-underline`}
                         >
-                           <a href={item.url}>{item.title}</a>
+                           <Link
+                              className='p-2 rounded-full border-2 border-transparent hover:no-underline hover:text-red hover:border-red'
+                              to={item.url}
+                              spy={true}
+                              smooth={true}
+                              duration={500}
+                           >
+                              {item.title}
+                           </Link>
                         </li>
                      ))}
                   </ul>

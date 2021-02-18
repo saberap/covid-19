@@ -1,9 +1,10 @@
 import { ReactElement } from 'react';
 import Image from 'next/image';
+import { navItemsMap } from 'lib/constants/nav-items.constant';
 
 export default function About(): ReactElement {
    return (
-      <div className='section'>
+      <div className='section' id={navItemsMap.get('ABOUT')?.url}>
          <div className='container'>
             <div className='section__wrapper py-10 relative'>
                <div className='flex-1'>

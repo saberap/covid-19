@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { navItems } from 'lib/constants';
+import { navItems, socialMedia } from 'lib/constants';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -7,10 +7,10 @@ import Footer from './Footer';
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function Layout({ children }: any): ReactElement {
    return (
-      <>
+      <div className='overflow-hidden'>
          <Navbar navbarItems={navItems} />
          {children}
-         <Footer />
-      </>
+         <Footer navbarItems={navItems} socialMedia={socialMedia} />
+      </div>
    );
 }

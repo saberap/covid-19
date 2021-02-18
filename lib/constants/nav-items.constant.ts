@@ -4,27 +4,41 @@ const navItems: Array<INav> = [
    {
       name: 'OVERVIEW',
       title: 'Overview',
-      url: '#Overview',
+      url: 'Overview',
+   },
+   {
+      name: 'ABOUT',
+      title: 'About',
+      url: 'About',
    },
    {
       name: 'CONTAGION',
       title: 'Contagion',
-      url: '#Contagion',
+      url: 'Contagion',
    },
    {
       name: 'SYMPTOMS',
       title: 'Symptoms',
-      url: '#Symptoms',
+      url: 'Symptoms',
    },
    {
       name: 'PREVENTION',
       title: 'Prevention',
-      url: '#Prevention',
+      url: 'Prevention',
    },
    {
-      name: 'CONTACT',
-      title: 'Contact',
-      url: '#Contact',
+      name: 'LIVEREPORT',
+      title: 'Live Report',
+      url: 'liveReport',
    },
 ];
+
+export const navItemsMap: Map<string, INav> = (navItems => {
+   const navbarItemsToMap = new Map();
+   navItems.forEach(item => {
+      navbarItemsToMap.set(item.name, item);
+   });
+   return navbarItemsToMap;
+})(navItems);
+
 export default navItems;

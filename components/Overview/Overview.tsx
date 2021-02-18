@@ -1,10 +1,14 @@
 import { ReactElement } from 'react';
 
 import Image from 'next/image';
+import { navItemsMap } from 'lib/constants/nav-items.constant';
 
 export default function Overview(): ReactElement {
    return (
-      <div className='section section__linear-gradient'>
+      <div
+         className='section section__linear-gradient'
+         id={navItemsMap.get('OVERVIEW')?.url}
+      >
          <div className='container'>
             <div className='section__wrapper py-10'>
                <div className='p-36'>

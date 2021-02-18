@@ -2,9 +2,11 @@
 import { ReactElement } from 'react';
 import Image from 'next/image';
 
+import { navItemsMap } from 'lib/constants/nav-items.constant';
+
 export default function Prevention(): ReactElement {
    return (
-      <div className='section'>
+      <div className='section' id={navItemsMap.get('PREVENTION')?.url}>
          <div className='container'>
             <h3 className='primary-color font-bold mt-5 text-center'>
                Covid-19

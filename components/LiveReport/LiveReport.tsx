@@ -6,6 +6,7 @@ import { ISummary } from 'lib/interfaces';
 
 import CountryList from './CountryList';
 import MapChart from './Chart';
+import { navItemsMap } from 'lib/constants/nav-items.constant';
 interface Props {
    data: Array<ISummary>;
 }
@@ -13,7 +14,10 @@ interface Props {
 export default function LiveReport({ data }: Props): ReactElement {
    const [content, setContent] = useState('');
    return (
-      <div className='section section__linear-gradient-from-bottom pb-56 relative'>
+      <div
+         className='section section__linear-gradient-from-bottom pb-56 relative'
+         id={navItemsMap.get('LIVEREPORT')?.url}
+      >
          <div className='container'>
             <div className='section__wrapper py-10 space-x-5'>
                <div className='p-5 bg-white shadow-xl rounded-lg relative w-4/12'>
