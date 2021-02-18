@@ -37,7 +37,7 @@ export default function Home({ data }: any): ReactElement {
             <meta property='og:site_name' content='Covid-19 Alert' />
             <meta
                property='og:image'
-               content={'static/assets/images/logo-image.jpg'}
+               content={'/static/assets/images/logo-image.jpg'}
             />
             <meta property='og:image:width' content='250' />
             <meta property='og:image:height' content='250' />
