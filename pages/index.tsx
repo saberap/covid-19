@@ -21,7 +21,7 @@ export default function Home({ data }: any): ReactElement {
    return (
       <>
          <Head>
-            <title>Create Next App</title>
+            <title>Covid-19</title>
             <link rel='icon' href='/favicon.ico' />
          </Head>
          <Layout>
