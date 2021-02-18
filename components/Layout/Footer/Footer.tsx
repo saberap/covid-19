@@ -16,8 +16,8 @@ export default function Footer({
    return (
       <div className='footer p-5'>
          <div className='container'>
-            <div className='flex justify-between'>
-               <div className='-mt-5'>
+            <div className='md:flex md:justify-between'>
+               <div className='mx-auto flex justify-center md:-mt-5 md:block md:mx-0'>
                   <Image
                      src={'/static/assets/images/LogoWithText.svg'}
                      width={220}
@@ -25,7 +25,7 @@ export default function Footer({
                      alt='Logo'
                   />
                </div>
-               <ul className='flex'>
+               <ul className='my-5 text-center md:flex md:my-0'>
                   {navbarItems.map((item: INav) => (
                      <li key={item.name} className='mx-2 cursor-pointer'>
                         <Link
@@ -39,7 +39,7 @@ export default function Footer({
                      </li>
                   ))}
                </ul>
-               <ul className='flex'>
+               <ul className='flex justify-center my-5 md:my-0'>
                   {socialMedia.map(({ name, url, icon: Icon }: ISocial) => (
                      <li key={name} className='mx-2'>
                         <a href={url} target='_blank' rel='noreferrer'>

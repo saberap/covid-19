@@ -18,8 +18,8 @@ export default function Prevention(): ReactElement {
                Corona viruses are a type of virus. There are many different
                kinds, and some cause disease. A newly identified type has caused
             </p>
-            <div className='section__wrapper py-10 px-32 relative'>
-               <div className='flex-1 p-36'>
+            <div className='mt-5 md:flex md:px-32 md:relative'>
+               <div className='w-full md:w-2/3 md:p-36'>
                   <h2 className='heading-color font-bold text-4xl mb-5 relative'>
                      <span className='primary-background-color-light inline-flex justify-center items-center primary-color rounded-full text-2xl w-10 h-10'>
                         01
@@ -34,7 +34,7 @@ export default function Prevention(): ReactElement {
                      "outside the box" thinking. Objectively
                   </p>
                </div>
-               <div className='flex-1'>
+               <div className='hidden md:w-1/3 md:block'>
                   <Image
                      src='/static/assets/images/Mask-girl.svg'
                      alt='Wear masks'
@@ -42,7 +42,7 @@ export default function Prevention(): ReactElement {
                      height={450}
                   />
                </div>
-               <div className='absolute bottom-0 -left-40'>
+               <div className='hidden md:absolute md:bottom-0 md:-left-40'>
                   <Image
                      src='/static/assets/images/Virus-g.svg'
                      alt='Corona Virus'
@@ -51,8 +51,8 @@ export default function Prevention(): ReactElement {
                   />
                </div>
             </div>
-            <div className='section__wrapper px-32 relative'>
-               <div className='flex-1'>
+            <div className='md:flex md:px-32 md:relative'>
+               <div className='hidden md:w-1/3 md:block'>
                   <Image
                      src='/static/assets/images/Wash-hands.svg'
                      alt='Wash Hands'
@@ -60,7 +60,7 @@ export default function Prevention(): ReactElement {
                      height={450}
                   />
                </div>
-               <div className='flex-1 p-36'>
+               <div className='w-full md:w-2/3 md:py-10'>
                   <h2 className='heading-color font-bold text-4xl mb-5 relative'>
                      <span className='primary-background-color-light inline-flex justify-center items-center primary-color rounded-full text-2xl w-10 h-10'>
                         02
@@ -77,8 +77,8 @@ export default function Prevention(): ReactElement {
                   </p>
                </div>
             </div>
-            <div className='section__wrapper px-32 relative'>
-               <div className='flex-1 p-36'>
+            <div className='md:flex md:px-32'>
+               <div className='w-full md:w-2/3'>
                   <h2 className='heading-color font-bold text-4xl mb-5 relative'>
                      <span className='primary-background-color-light inline-flex justify-center items-center primary-color rounded-full text-2xl w-10 h-10'>
                         03
@@ -93,7 +93,7 @@ export default function Prevention(): ReactElement {
                      "outside the box" thinking. Objectively
                   </p>
                </div>
-               <div className='flex-1'>
+               <div className='hidden md:w-1/3 md:block'>
                   <Image
                      src='/static/assets/images/Use-Nose.svg'
                      alt='Use Nose'
@@ -102,8 +102,8 @@ export default function Prevention(): ReactElement {
                   />
                </div>
             </div>
-            <div className='section__wrapper px-32 relative'>
-               <div className='flex-1'>
+            <div className='md:flex md:px-32 md:relative'>
+               <div className='hidden md:w-1/3 md:block'>
                   <Image
                      src='/static/assets/images/Avoid-Contacts.svg'
                      alt='Avoid contacts'
@@ -111,7 +111,7 @@ export default function Prevention(): ReactElement {
                      height={450}
                   />
                </div>
-               <div className='flex-1 p-36'>
+               <div className='w-full md:w-2/3'>
                   <h2 className='heading-color font-bold text-4xl mb-5 relative'>
                      <span className='primary-background-color-light inline-flex justify-center items-center primary-color rounded-full text-2xl w-10 h-10'>
                         04
@@ -125,7 +125,7 @@ export default function Prevention(): ReactElement {
                      standards compliant leadership skills vis-a-vis pandemic
                   </p>
                </div>
-               <div className='absolute bottom-25 right-0'>
+               <div className='hidden md:absolute md:bottom-25 md:right-0'>
                   <Image
                      src='/static/assets/images/Virus.svg'
                      alt='Corona Virus'
@@ -133,7 +133,7 @@ export default function Prevention(): ReactElement {
                      height={292}
                   />
                </div>
-               <div className='absolute bottom-0 right-5'>
+               <div className='hidden md:absolute md:bottom-0 md:right-5'>
                   <Image
                      src='/static/assets/images/Virus-g.svg'
                      alt='Corona Virus'

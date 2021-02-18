@@ -21,11 +21,11 @@ export default function Navbar({ navbarItems }: Props): ReactElement {
                   />
                </div>
                <div>
-                  <ul className='md:flex overflow-auto whitespace-nowrap'>
+                  <ul className='overflow-x-auto whitespace-nowrap w-96 md:flex md:text-green md:w-auto md:overflow-visible'>
                      {navbarItems.map((item: INav) => (
                         <li
                            key={item.name}
-                           className={`mx-2 cursor-pointer no-underline`}
+                           className={`mx-2 cursor-pointer no-underline inline-block`}
                         >
                            <Link
                               className='p-2 rounded-full border-2 border-transparent hover:no-underline hover:text-red hover:border-red'

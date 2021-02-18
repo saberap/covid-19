@@ -6,8 +6,8 @@ export default function About(): ReactElement {
    return (
       <div className='section' id={navItemsMap.get('ABOUT')?.url}>
          <div className='container'>
-            <div className='section__wrapper py-10 relative'>
-               <div className='flex-1'>
+            <div className='relative md:flex md:py-10'>
+               <div className='w-full md:w-1/3'>
                   <Image
                      src='/static/assets/images/About.svg'
                      alt='About covid 19'
@@ -15,7 +15,7 @@ export default function About(): ReactElement {
                      height={796}
                   />
                </div>
-               <div className='flex-1 p-36'>
+               <div className='w-full z-10 md:w-2/3 md:p-36'>
                   <h3 className='primary-color font-bold'>What Is Covid-19</h3>
                   <h2 className='heading-color font-bold text-4xl mb-5'>
                      Coronavirus
@@ -32,7 +32,7 @@ export default function About(): ReactElement {
                      Learn More
                   </button>
                </div>
-               <div className='absolute bottom-0 right-5'>
+               <div className='hidden md:absolute md:bottom-0 md:right-5 md:block'>
                   <Image
                      src='/static/assets/images/Virus.svg'
                      alt='Corona Virus'

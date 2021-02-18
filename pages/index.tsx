@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { ReactElement } from 'react';
 import Head from 'next/head';
-import axios from 'axios';
+import { fetchAPI } from 'lib/utilities';
 
 import {
    Layout,
@@ -13,7 +13,7 @@ import {
    Prevention,
    LiveReport,
 } from 'components';
-import { api } from 'lib/configs';
+
 import { ISummary } from 'lib/interfaces';
 import { dynamicObjectSort } from 'lib/utilities';
 
@@ -40,11 +40,13 @@ export default function Home({ data }: any): ReactElement {
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function getStaticProps() {
    let data: Array<ISummary> = [];
+   const api = new fetchAPI();
    try {
-      const res = await axios.get(`${api.base_url}/summary`);
+      const res = await api.get(`/summary`);
+
       data = await res.data.Countries;
 
-      data = await data.map(
+      data = data.map(
          (item: any): ISummary => ({
             name: item.Country,
             code: item.CountryCode,

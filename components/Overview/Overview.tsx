@@ -10,8 +10,16 @@ export default function Overview(): ReactElement {
          id={navItemsMap.get('OVERVIEW')?.url}
       >
          <div className='container'>
-            <div className='section__wrapper py-10'>
-               <div className='p-36'>
+            <div className='md:flex py-10'>
+               <div className='w-full md:w-1/2'>
+                  <Image
+                     src={'/static/assets/images/Overview.svg'}
+                     alt='Overview to Covid 19'
+                     width={1177}
+                     height={812}
+                  />
+               </div>
+               <div className='w-full md:w-1/2 md:p-36'>
                   <h3 className='primary-color font-bold'>COVID-19 Alert</h3>
                   <h2 className='heading-color font-bold text-4xl mb-5'>
                      Stay at Home quarantine To stop Corona virus
@@ -24,15 +32,6 @@ export default function Overview(): ReactElement {
                   <button className='primary-background-color text-white rounded-full py-3 px-5 text-lg hover:bg-red-600'>
                      Let Us Help
                   </button>
-               </div>
-
-               <div>
-                  <Image
-                     src={'/static/assets/images/Overview.svg'}
-                     alt='Overview to Covid 19'
-                     width={1177}
-                     height={812}
-                  />
                </div>
             </div>
          </div>
