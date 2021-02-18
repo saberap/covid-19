@@ -13,7 +13,7 @@ export default function Overview(): ReactElement {
             <div className='md:flex py-10'>
                <div className='w-full md:w-1/2'>
                   <Image
-                     src={'/static/assets/images/Overview.svg'}
+                     src={'/static/assets/images/overview.svg'}
                      alt='Overview to Covid 19'
                      width={1177}
                      height={812}
