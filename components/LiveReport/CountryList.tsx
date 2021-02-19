@@ -7,8 +7,12 @@ import { ISummary } from 'lib/interfaces';
 import { makePagination } from 'lib/utilities';
 interface Props {
    items: Array<ISummary>;
+   itemClickHandler: (item: ISummary) => void;
 }
-export default function CountryList({ items }: Props): ReactElement {
+export default function CountryList({
+   items,
+   itemClickHandler,
+}: Props): ReactElement {
    const [pagination, setPagination] = useState({ top: 8, skip: 0 });
    const [data, setData] = useState(() => makePagination(items, 8, 0));
 
@@ -42,10 +46,11 @@ export default function CountryList({ items }: Props): ReactElement {
             break;
       }
    };
+
    return (
       <div className='country'>
          <div className='country__head flex justify-between py-5'>
-            <h2 className='text-xl font-bold mx-2'>Live Reports</h2>
+            <h2 className='text-xl font-bold mx-4 live-circle'>Live Reports</h2>
             <div className='bg-white shadow-lg rounded-lg flex justify-between p-2'>
                <button
                   onClick={() => paginationHandler('previous')}
@@ -73,7 +78,13 @@ export default function CountryList({ items }: Props): ReactElement {
          <div className='country__body'>
             <ul>
                {data.map((item: ISummary) => (
-                  <li key={item.slug} className='flex justify-between my-5'>
+                  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+                  <li
+                     key={item.slug}
+                     className='flex justify-between p-2 my-2 rounded-lg cursor-pointer hover:bg-green-100'
+                     onClick={() => itemClickHandler(item)}
+                     onKeyDown={() => itemClickHandler(item)}
+                  >
                      <Flag className='w-1/12 rounded-md' code={item.code} />
                      <h3 className='w-9/12 text-left font-semibold ml-5'>
                         {item.name}

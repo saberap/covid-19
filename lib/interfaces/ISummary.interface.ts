@@ -7,4 +7,5 @@ export default interface ISummary extends ICountry {
    totalDeaths: number;
    newRecovered: number;
    totalRecovered: number;
+   date: string;
 }

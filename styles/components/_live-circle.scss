@@ -1,0 +1,34 @@
+.live-circle {
+   position: relative;
+   &::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: $primary-color;
+      position: absolute;
+      border-radius: 50%;
+      left: -20px;
+      top: 12px;
+   }
+   &::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: $primary-color;
+      position: absolute;
+      border-radius: 50%;
+      left: -20px;
+      top: 12px;
+      animation: live 1200ms infinite;
+   }
+}
+@keyframes live {
+   from {
+      transform: scale(1);
+      opacity: 1;
+   }
+   to {
+      transform: scale(3);
+      opacity: 0;
+   }
+}

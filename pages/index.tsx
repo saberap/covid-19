@@ -77,6 +77,7 @@ export async function getStaticProps() {
             totalConfirmed: item.TotalConfirmed,
             totalDeaths: item.TotalDeaths,
             totalRecovered: item.TotalRecovered,
+            date: item.Date,
          })
       );
       data = data.sort(dynamicObjectSort('totalConfirmed', 'desc'));

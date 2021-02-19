@@ -9,7 +9,7 @@ export default class FetchAPI implements IHttpClient {
       this.base_url = api.base_url;
       this.instance = axios.create({
          baseURL: this.base_url,
-         timeout: 5000,
+         timeout: 10000,
       });
    }
    async get(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse> {
