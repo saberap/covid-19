@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const dynamicSort: (property: string, sortType: 'asc' | 'desc') => any = (
    property,
    sortType

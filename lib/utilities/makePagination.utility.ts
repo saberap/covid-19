@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const makePagination: (
    data: Array<any>,
    top: number,

@@ -1,4 +1,3 @@
-import classes from '*.module.css';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 

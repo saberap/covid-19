@@ -1,11 +1,12 @@
-import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
+import { Dispatch, ReactElement, SetStateAction } from 'react';
+import dynamic from 'next/dynamic';
 import { Map } from 'react-feather';
 import ReactTooltip from 'react-tooltip';
 import CountUp from 'react-countup';
 
-import { Chart } from 'components';
 import { ICountrySummary, ISummary } from 'lib/interfaces';
 
+const ApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
 interface Props {
    countrySummary: ISummary;
    summaryByDate: ICountrySummary[];
@@ -71,7 +72,7 @@ export default function CountryDetail({
             Last Update: {new Date(countrySummary.date).toLocaleString()}
          </p>
          <div>
-            <Chart
+            <ApexChart
                type='area'
                series={[
                   {
@@ -81,9 +82,38 @@ export default function CountryDetail({
                options={{
                   chart: {
                      id: 'area-datetime',
+                     type: 'area',
+                     height: 200,
+                     zoom: {
+                        autoScaleYaxis: true,
+                     },
+                  },
+                  annotations: {
+                     yaxis: [
+                        {
+                           y: 30,
+                           borderColor: '#999',
+                           label: {
+                              show: true,
+                              text: 'Support',
+                              style: {
+                                 color: '#fff',
+                                 background: '#00E396',
+                              },
+                           },
+                        },
+                     ],
                   },
                   dataLabels: {
                      enabled: false,
+                  },
+                  markers: {
+                     size: 0,
+                     style: 'hollow',
+                  },
+                  xaxis: {
+                     type: 'datetime',
+                     tickAmount: 6,
                   },
                   tooltip: {
                      x: {

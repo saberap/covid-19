@@ -17,7 +17,10 @@ import {
 import { ISummary } from 'lib/interfaces';
 import { dynamicObjectSort } from 'lib/utilities';
 
-export default function Home({ data }: any): ReactElement {
+interface Props {
+   data: ISummary[];
+}
+export default function Home({ data }: Props): ReactElement {
    return (
       <>
          <Head>
@@ -67,6 +70,7 @@ export async function getStaticProps() {
       data = await res.data.Countries;
 
       data = data.map(
+         // eslint-disable-next-line @typescript-eslint/no-explicit-any
          (item: any): ISummary => ({
             name: item.Country,
             code: item.CountryCode,
@@ -82,7 +86,7 @@ export async function getStaticProps() {
       );
       data = data.sort(dynamicObjectSort('totalConfirmed', 'desc'));
    } catch (error) {
-      console.log(error);
+      console.error(error);
    }
    if (!data) {
       return {

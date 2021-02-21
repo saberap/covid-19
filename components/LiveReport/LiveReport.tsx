@@ -37,9 +37,10 @@ export default function LiveReport({ data }: Props): ReactElement {
       )
          .then(res => res.data)
          .then(
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (data: Array<any>): Array<ICountrySummary> => {
                const formattedData: Array<ICountrySummary> = data.map(item => ({
-                  active: item.Active,
+                  active: item.Active as number,
                   confirmed: item.Confirmed,
                   deaths: item.Deaths,
                   recovered: item.Recovered,
@@ -73,8 +74,11 @@ export default function LiveReport({ data }: Props): ReactElement {
                         {selectedCountryData.summary ? (
                            <CountryDetail
                               countrySummary={selectedCountryData.summary}
-                              summaryByDate={selectedCountryData.countryData}
+                              summaryByDate={
+                                 selectedCountryData.countryData as ICountrySummary[]
+                              }
                               setSelectedCountryData={
+                                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                  setSelectedCountryData as any
                               }
                            />
