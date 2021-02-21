@@ -76,25 +76,36 @@ export default function CountryList({
             </div>
          </div>
          <div className='country__body'>
-            <ul>
-               {data.map((item: ISummary) => (
-                  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-                  <li
-                     key={item.slug}
-                     className='flex justify-between p-2 my-2 rounded-lg cursor-pointer hover:bg-green-100'
-                     onClick={() => itemClickHandler(item)}
-                     onKeyDown={() => itemClickHandler(item)}
-                  >
-                     <Flag className='w-1/12 rounded-md' code={item.code} />
-                     <h3 className='w-9/12 text-left font-semibold ml-5'>
-                        {item.name}
-                     </h3>
-                     <span className='font-semibold'>
-                        {numeral(item.totalConfirmed).format('0,0')}
-                     </span>
-                  </li>
-               ))}
-            </ul>
+            {data.length > 0 ? (
+               <ul>
+                  {data.map((item: ISummary) => (
+                     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+                     <li
+                        key={item.slug}
+                        className='flex justify-between p-2 my-2 rounded-lg cursor-pointer hover:bg-green-100'
+                        onClick={() => itemClickHandler(item)}
+                        onKeyDown={() => itemClickHandler(item)}
+                     >
+                        <Flag className='w-1/12 rounded-md' code={item.code} />
+                        <h3 className='w-9/12 text-left font-semibold ml-5'>
+                           {item.name}
+                        </h3>
+                        <span className='font-semibold'>
+                           {numeral(item.totalConfirmed).format('0,0')}
+                        </span>
+                     </li>
+                  ))}
+               </ul>
+            ) : (
+               <>
+                  <p className='font-thin text-sm'>
+                     The server is currently unavailable (because it is
+                     overloaded or down for maintenance). Generally, this is a
+                     temporary state.
+                  </p>
+                  <p className='font-thin'>Please try again later.</p>
+               </>
+            )}
          </div>
       </div>
    );
