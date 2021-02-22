@@ -79,11 +79,12 @@ export default function CountryDetail({
                      data: chartData,
                   },
                ]}
+               height={320}
                options={{
                   chart: {
                      id: 'area-datetime',
                      type: 'area',
-                     height: 200,
+                     height: 100,
                      zoom: {
                         autoScaleYaxis: true,
                      },
