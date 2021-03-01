@@ -1,7 +1,5 @@
 name: Node.js CI
 
-on: [pname: Node.js CI
-
 on: [push]
 
 jobs:
