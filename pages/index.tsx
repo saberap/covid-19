@@ -84,6 +84,7 @@ export async function getStaticProps() {
             date: item.Date,
          })
       );
+      //sort data with total confirmed
       data = data.sort(dynamicObjectSort('totalConfirmed', 'desc'));
    } catch (error) {
       console.error(error);
